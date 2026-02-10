@@ -19,6 +19,7 @@ import PraktischeInfo from "./pages/PraktischeInfo";
 import Actueel from "./pages/Actueel";
 import Ouders from "./pages/Ouders";
 import Kennismaken from "./pages/Kennismaken";
+import MrOr from "./pages/MrOr";
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/ouders" element={<Ouders />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/kennismaken" element={<Kennismaken />} />
+          <Route path="/mr-or" element={<MrOr />} />
         </Routes>
       </main>
       <BackToTop />

@@ -25,7 +25,7 @@ export default function Team() {
       </div>
       <p className="text-slate-700">
         Eén team van leerkrachten, pedagogisch medewerkers, vakleerkrachten en ondersteuners. We stemmen dagelijks af zodat opvang en
-        onderwijs op elkaar aansluiten. citeturn0search0
+        onderwijs op elkaar aansluiten. 
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -45,3 +45,4 @@ export default function Team() {
     </section>
   );
 }
+

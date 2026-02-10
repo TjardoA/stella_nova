@@ -8,7 +8,7 @@ export default function Ikc() {
       <PageHero
         eyebrow="IKC Stella Nova"
         title="Wat is een IKC?"
-        description="Opvang, BSO en basisschool op één plek met één missie, visie en team. Kinderen stromen soepel door. citeturn0search0"
+        description="Opvang, BSO en basisschool op één plek met één missie, visie en team. Kinderen stromen soepel door. "
       />
 
       <section className="card">
@@ -35,19 +35,19 @@ export default function Ikc() {
           <p className="eyebrow">Voordelen</p>
           <h2 className="h2">Waarom een IKC werkt</h2>
           <ul className="list">
-            <li>Één missie en visie voor opvang en onderwijs; iedereen werkt vanuit hetzelfde fundament. citeturn0search0</li>
-            <li>Dagelijkse afstemming tussen leerkrachten en pedagogisch medewerkers, zodat overgangen soepel zijn. citeturn0search0</li>
-            <li>Balans tussen veiligheid en uitdaging in elke dagindeling. citeturn0search0</li>
-            <li>Breed team (vakleerkrachten, ondersteuners) kijkt vanuit meerdere invalshoeken naar kinderen. citeturn0search0</li>
+            <li>Één missie en visie voor opvang en onderwijs; iedereen werkt vanuit hetzelfde fundament. </li>
+            <li>Dagelijkse afstemming tussen leerkrachten en pedagogisch medewerkers, zodat overgangen soepel zijn. </li>
+            <li>Balans tussen veiligheid en uitdaging in elke dagindeling. </li>
+            <li>Breed team (vakleerkrachten, ondersteuners) kijkt vanuit meerdere invalshoeken naar kinderen. </li>
           </ul>
         </div>
         <div className="card space-y-3">
           <p className="eyebrow">Gebouw & ruimtes</p>
           <h2 className="h2">Modern, open en flexibel</h2>
           <p className="text-slate-700">
-            Geen traditionele lokalen, maar leerpleinen en hoeken die met kasten en kringen worden ingericht. Veel licht, goede akoestiek en aandacht voor duurzaamheid. citeturn0search4
+            Geen traditionele lokalen, maar leerpleinen en hoeken die met kasten en kringen worden ingericht. Veel licht, goede akoestiek en aandacht voor duurzaamheid. 
           </p>
-          <p className="text-sm text-slate-600">Alles onder één dak geeft rust voor ouders en kinderen. citeturn0search4</p>
+          <p className="text-sm text-slate-600">Alles onder één dak geeft rust voor ouders en kinderen. </p>
         </div>
       </section>
 
@@ -57,7 +57,7 @@ export default function Ikc() {
         <div className="grid md:grid-cols-2 gap-4">
           <div className="rounded-2xl border border-brand-light bg-white p-4 shadow-sm">
             <p className="font-semibold text-slate-900">Missie & visie</p>
-            <p className="text-sm text-slate-700">Ieder kind is een “nieuwe ster” die we laten stralen met vernieuwend onderwijs en opvang. citeturn0search6</p>
+            <p className="text-sm text-slate-700">Ieder kind is een “nieuwe ster” die we laten stralen met vernieuwend onderwijs en opvang. </p>
           </div>
           <div className="rounded-2xl border border-brand-light bg-white p-4 shadow-sm">
             <p className="font-semibold text-slate-900">Samenwerking</p>
@@ -76,3 +76,4 @@ export default function Ikc() {
     </div>
   );
 }
+

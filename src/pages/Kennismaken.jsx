@@ -9,7 +9,7 @@ const aanmeldBlokken = [
       "Gemeentelijk digitaal aanmeldsysteem vanaf 1 januari 2025; voorkeur voor drie scholen opgeven.",
       "Kinderen geboren op/na 1 januari 2022 kunnen vanaf 12 maart 2025 digitaal worden aangemeld.",
     ],
-    cite: "citeturn0search0",
+    cite: "",
   },
   {
     title: "Zij-instroom",
@@ -18,7 +18,7 @@ const aanmeldBlokken = [
       "Redenen kunnen zijn verhuizing of specifieke onderwijsbehoefte.",
       "Je hoort binnen zes weken na sluiting van de aanmeldperiode of er plaats is.",
     ],
-    cite: "citeturn0search4",
+    cite: "",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function Kennismaken() {
         <h1 className="h2">Kennismaken en aanmelden nieuwe leerlingen</h1>
         <p className="text-slate-700 max-w-3xl">
           Plan een rondleiding of kennismakingsgesprek. We vertellen graag hoe opvang, BSO en basisschool op elkaar aansluiten
-          binnen IKC Stella Nova. citeturn0search0
+          binnen IKC Stella Nova. 
         </p>
         <div className="mt-4 flex gap-3 flex-wrap">
           <a className="btn-primary inline-flex items-center gap-2" href="mailto:directie@ikcstellanova.unicoz.nl">
@@ -175,3 +175,4 @@ export default function Kennismaken() {
     </div>
   );
 }
+

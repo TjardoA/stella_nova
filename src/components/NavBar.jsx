@@ -1,6 +1,6 @@
 ﻿import { useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, Phone, Star, Search, Facebook } from "lucide-react";
+import { Menu, X, Phone, Star, Facebook } from "lucide-react";
 
 const navItems = [
   { label: "HOME", to: "/" },
@@ -13,7 +13,7 @@ const navItems = [
       { label: "Missie & visie", to: "/missie-visie" },
       { label: "Team", to: "/team" },
       { label: "Oriëntatiegesprekken", to: "/kennismaken" },
-      { label: "Oudercommissie, MR & OR", to: "/ouders" },
+      { label: "Oudercommissie, MR & OR", to: "/mr-or" },
       { label: "Klachtenregeling", to: "/ouders" },
       { label: "Werken of stage lopen", to: "/ikc" },
     ],
@@ -95,6 +95,11 @@ export function NavBar() {
   return (
     <nav className="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-brand-light">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3 justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/logo.png" alt="IKC Stella Nova" className="h-12 w-auto" />
+        </Link>
+
         {/* Left contact */}
         <a href="tel:0793169184" className="hidden md:flex items-center gap-2 text-slate-700 font-semibold">
           <Phone className="w-5 h-5 text-brand-accent" /> 079 316 91 84
@@ -109,7 +114,7 @@ export function NavBar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
+        <div className="hidden md:flex items-center gap-1 flex-1 justify-end">
           {navItems.map((item) =>
             item.children ? (
               <DesktopDropdown key={item.label} item={item} open={desktopOpen} setOpen={setDesktopOpen} />
@@ -147,71 +152,64 @@ export function NavBar() {
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden border-t border-brand-light bg-white">
-          <div className="px-4 py-3 space-y-2">
-            <a href="tel:0793169184" className="flex items-center gap-2 text-slate-700 font-semibold">
-              <Phone className="w-5 h-5 text-brand-accent" /> 079 316 91 84
-            </a>
-            <Link to="/kennismaken" className="btn-primary w-full justify-center" onClick={() => setMobileOpen(false)}>
-              <Star className="w-4 h-4" /> Kennismaken
-            </Link>
-            {navItems.map((item) => (
-              <div key={item.label} className="border border-brand-light rounded-lg">
-                <button
-                  className="w-full text-left px-3 py-2 font-semibold flex justify-between items-center"
-                  onClick={() => setMobileDropdown((v) => (v === item.label ? null : item.label))}
-                >
-                  {item.label}
-                  {item.children && <span className="text-brand-primary">{mobileDropdown === item.label ? "–" : "+"}</span>}
-                </button>
-                {(!item.children || mobileDropdown === item.label) && (
+      <div
+        className={`md:hidden border-t border-brand-light bg-white mobile-menu ${
+          mobileOpen ? "mobile-menu-open" : "mobile-menu-closed"
+        }`}
+        aria-hidden={!mobileOpen}
+      >
+        <div className="px-4 py-3 space-y-2">
+          <a href="tel:0793169184" className="flex items-center gap-2 text-slate-700 font-semibold">
+            <Phone className="w-5 h-5 text-brand-accent" /> 079 316 91 84
+          </a>
+          <Link to="/kennismaken" className="btn-primary w-full justify-center" onClick={() => setMobileOpen(false)}>
+            <Star className="w-4 h-4" /> Kennismaken
+          </Link>
+          {navItems.map((item) => (
+             <div key={item.label} className="border border-brand-light rounded-lg">
+               <button
+                 className="w-full text-left px-3 py-2 font-semibold flex justify-between items-center"
+                 onClick={() => setMobileDropdown((v) => (v === item.label ? null : item.label))}
+               >
+                 {item.label}
+                 {item.children && <span className="text-brand-primary">{mobileDropdown === item.label ? "–" : "+"}</span>}
+               </button>
+                {item.children && mobileDropdown === item.label && (
                   <div className="flex flex-col">
-                    {item.children ? (
-                      item.children.map((child) => {
-                        const isExternal = child.to.startsWith("http");
-                        const close = () => {
-                          setMobileOpen(false);
-                          setMobileDropdown(null);
-                        };
-                        return isExternal ? (
-                          <a
-                            key={child.label}
-                            href={child.to}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="px-4 py-2 text-sm text-slate-700 hover:bg-brand-light"
-                            onClick={close}
-                          >
-                            {child.label}
-                          </a>
-                        ) : (
-                          <NavLink
-                            key={child.label}
-                            to={child.to}
-                            className="px-4 py-2 text-sm text-slate-700 hover:bg-brand-light"
-                            onClick={close}
-                          >
-                            {child.label}
-                          </NavLink>
-                        );
-                      })
-                    ) : (
-                      <NavLink
-                        to={item.to}
-                        className="px-4 py-2 text-sm text-slate-700 hover:bg-brand-light"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        Ga naar {item.label}
-                      </NavLink>
-                    )}
+                    {item.children.map((child) => {
+                      const isExternal = child.to.startsWith("http");
+                      const close = () => {
+                        setMobileOpen(false);
+                        setMobileDropdown(null);
+                      };
+                      return isExternal ? (
+                        <a
+                          key={child.label}
+                          href={child.to}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-4 py-2 text-sm text-slate-700 hover:bg-brand-light"
+                          onClick={close}
+                        >
+                          {child.label}
+                        </a>
+                      ) : (
+                        <NavLink
+                          key={child.label}
+                          to={child.to}
+                          className="px-4 py-2 text-sm text-slate-700 hover:bg-brand-light"
+                          onClick={close}
+                        >
+                          {child.label}
+                        </NavLink>
+                      );
+                    })}
                   </div>
                 )}
               </div>
             ))}
-          </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

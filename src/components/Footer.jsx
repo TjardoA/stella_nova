@@ -1,6 +1,6 @@
 ﻿export function Footer() {
   return (
-    <footer className="bg-slate-900 text-white py-6 mt-12">
+    <footer className="bg-slate-900 text-white py-6 mt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-4 text-sm">
         <div className="space-y-0.5">
           <p className="font-semibold leading-tight">IKC Stella Nova</p>

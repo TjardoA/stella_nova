@@ -10,8 +10,8 @@ export default function PraktischeInfo() {
       />
       <section className="card space-y-4">
         <ul className="list">
-          <li>Schooltijden, vakanties en studiedagen staan in de informatieboekjes (per bouw). citeturn0search1</li>
-          <li>Communicatie via Parro en nieuwsbrieven; korte lijnen met leerkrachten. citeturn0search1</li>
+          <li>Schooltijden, vakanties en studiedagen staan in de informatieboekjes (per bouw). </li>
+          <li>Communicatie via Parro en nieuwsbrieven; korte lijnen met leerkrachten. </li>
           <li>Gezonde school: fruit, bewegen en veilige omgeving.</li>
           <li>Verlof & ziekmeldingen: digitaal melden via Parro en telefonisch doorgeven.</li>
         </ul>
@@ -19,3 +19,4 @@ export default function PraktischeInfo() {
     </div>
   );
 }
+
