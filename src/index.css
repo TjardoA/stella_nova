@@ -1,0 +1,138 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  background-color: #f7f9fe;
+  color: #0f172a;
+  --brand-primary: #1f3b83;
+  --brand-accent: #f39200;
+  --brand-accent2: #ffbc47;
+  --brand-light: #eaf2ff;
+}
+
+body {
+  margin: 0;
+  background-color: #f7f9fe;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-full px-4 py-2 font-semibold shadow-md transition hover:-translate-y-0.5 hover:shadow-lg;
+  background-color: var(--brand-primary);
+  color: #fff;
+}
+.btn-accent {
+  @apply inline-flex items-center gap-2 rounded-full px-4 py-2 font-semibold shadow-md transition hover:-translate-y-0.5 hover:shadow-lg;
+  background-color: var(--brand-accent);
+  color: #0f172a;
+}
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-slate-800 font-semibold bg-white transition hover:-translate-y-0.5 hover:shadow;
+}
+.btn-light {
+  @apply inline-flex items-center justify-center rounded-full bg-white text-slate-900 px-4 py-2 font-semibold shadow hover:-translate-y-0.5 hover:shadow-lg;
+}
+.card {
+  @apply rounded-3xl shadow-lg p-8 border;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f7ff 100%);
+  border-color: color-mix(in srgb, var(--brand-primary) 10%, var(--brand-light));
+}
+.photo-card {
+  @apply rounded-3xl h-full min-h-[320px] bg-cover bg-center shadow-lg border;
+  border-color: color-mix(in srgb, var(--brand-accent) 25%, var(--brand-light));
+}
+.eyebrow {
+  @apply text-xs uppercase tracking-[0.14em] font-semibold;
+  color: var(--brand-primary);
+}
+.h2 {
+  @apply text-3xl font-bold text-slate-900 mb-2 leading-tight;
+  font-family: "Baloo 2", "Manrope", system-ui, -apple-system, sans-serif;
+}
+.list {
+  @apply space-y-2 text-slate-700;
+}
+.chip {
+  @apply inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-3 py-2 text-sm font-semibold text-slate-800 border shadow-sm hover:-translate-y-0.5 transition;
+  border-color: var(--brand-light);
+}
+.pill {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold border;
+  background-color: color-mix(in srgb, var(--brand-accent) 22%, transparent);
+  color: #7a3b00;
+  border-color: color-mix(in srgb, var(--brand-accent) 35%, transparent);
+}
+.link {
+  @apply inline-flex items-center gap-1 font-semibold hover:underline;
+  color: var(--brand-primary);
+}
+.bg-sand {
+  background: radial-gradient(circle at 25% 25%, #eaf2ff 0, #f7f9fe 35%, #fff6ec 70%, #ffeede 100%);
+}
+
+.input {
+  @apply w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-slate-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-primary/40 focus:border-brand-primary;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 4px;
+  height: 2px;
+  background: var(--brand-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+.nav-link:hover::after,
+.nav-link-active::after {
+  transform: scaleX(1);
+}
+.nav-link-active {
+  color: var(--brand-accent) !important;
+}
+
+.btn-top {
+  @apply fixed bottom-5 right-5 rounded-full bg-brand-primary text-white p-3 shadow-lg transition;
+}
+.btn-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Playful accents */
+.floating-star {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(circle at 40% 40%, #ffb347 0 40%, transparent 70%),
+    radial-gradient(circle at 70% 70%, #f39200 0 45%, transparent 70%);
+  transform: rotate(12deg);
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite alternate;
+  clip-path: polygon(50% 0%, 62% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 38% 35%);
+}
+.floating-star.blue {
+  background: radial-gradient(circle at 40% 40%, #5da0ff 0 40%, transparent 70%),
+    radial-gradient(circle at 70% 70%, #1f3b83 0 45%, transparent 70%);
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0) rotate(8deg);
+  }
+  to {
+    transform: translateY(-10px) rotate(18deg);
+  }
+}
